@@ -1,5 +1,6 @@
 const express = require('express');
-const favoritesRepo = require('../../repositories/favoritesRepo');
+const multer = require('multer');
+const { handleErrors, requireAuth } = require('./middlewares');
 const productsRepo = require('../../repositories/products');
 const favoritesTemplate = require('../../views/products/favorites');
 
@@ -9,55 +10,45 @@ const router = express.Router();
 
 router.post('/admin/products/favorites', async (req, res) => {
   // Figure out the cart!
-  let favorites;
-  if (!req.session.favoriteId) {
-    
-    favorites= await cartsRepo.create({ fItems: [] });
-    req.session.favoriteId = favorites.id;
+  let cart;
+  if (!req.session.cartId) {
+    // We dont have a cart, we need to create one,
+    // and store the cart id on the req.session.cartId
+    // property
+    cart = await cartsRepo.create({ items: [] });
+    req.session.cartId = cart.id;
   } else {
-   
-    favorites = await favoritesRepo.getOne(req.session.favoriteId);
+    // We have a cart! Lets get it from the repository
+    cart = await cartsRepo.getOne(req.session.cartId);
   }
 
-  const existingFavorites = favorites.fItems.find(fItem => fItem.id === req.body.productId);
-  if (existingFavorites) {
+  const existingItem = cart.items.find(item => item.id === req.body.productId);
+  if (existingItem) {
     // increment quantity and save cart
-    return res.send('Produkt już został dodany');
+    existingItem.quantity++;
   } else {
-    
-    favorites.fItems.push({ id: req.body.productId });
+    // add new product id to items array
+    cart.items.push({ id: req.body.productId, quantity: 1 });
   }
-  await favoritesRepo.update(favorites.id, {
-    items: favorites.items
+  await cartsRepo.update(cart.id, {
+    items: cart.items
   });
 
-  res.redirect('/admin/products/favorites');
+  res.redirect('/cart');
 });
 
 
-router.get('/admin/products/favorites', async (req, res) => {
-if (!req.session.favoriteId) {
-  return res.redirect('/admin/products');
-}
-const favorites = await favoritesRepo.getOne(req.session.favoriteId);
 
-for (let fItem of favorites.fItems) {
-  const product = await productsRepo.getOne(fItem.id);
-  fItem.product = product;
-}
 
-res.send(favoritesTemplate({fItems: favorites.fItems }));
+router.get('/admin/products/favorites', requireAuth, async (req, res) => {
+  const favorites = await productsRepo.getAll();
+  res.send(productsIndexTemplate({ products }));
 });
-// Receive a post request to delete an item from a cart
 
-router.post('/admin/products/favorites/delete', async (req, res) => {
-  const { fItemId } = req.body;
-  const favorites = await favoritesRepo.getOne(req.session.favoriteId);
- 
-  const fItems = favorites.fItems.filter((fItem) => fItem.id !== fItemId);
- 
-  await favoritesRepo.update(req.session.favoriteId, { fItems });
- 
-  res.redirect('/admin/products/favorites');
-});
+
+  
+
+
+
+
 module.exports = router;
