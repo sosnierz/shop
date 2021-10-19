@@ -28,11 +28,6 @@ body {
   grid-area: menu;
 }
 
-.product-card figure {
-  text-align: center;
-  padding: 5px;
-}
-
 .navbar ul.social,
 .nav-bottom {
   display: flex;
@@ -258,8 +253,11 @@ section.banner {
 }
 
 
-.card-footer-item i {
-  margin-right: 10px;
+
+
+.product-card figure {
+  text-align: center;
+  padding: 5px;
 }
 
 #cart h3 {

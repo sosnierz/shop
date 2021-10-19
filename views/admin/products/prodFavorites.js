@@ -1,7 +1,7 @@
 const layout = require('../layout');
 
-module.exports = ({ products }) => {
-  const renderedProducts = products
+module.exports = ({ favorites }) => {
+  const renderedFavorites = favorites
     .map(product => {
       return `
       <tr>
@@ -16,15 +16,11 @@ module.exports = ({ products }) => {
           </a>
         </td>
         <td>
-          <form method="POST" action="/admin/products/${product.id}/delete">
+          <form method="POST" action="/admin/products/favorites/${product.id}/delete">
             <button class="button is-danger">Usuń</button>
           </form>
         </td>
-        <td>
-        <form action="/admin/products/favorites" method="POST">
-        <button class="button is-danger">dodaj</button>
-        </button>
-        </td>
+     
       </tr>
     `;
     })
@@ -33,9 +29,8 @@ module.exports = ({ products }) => {
   return layout({
     content: `
       <div class="control">
-        <h1 class="subtitle">Produkty</h1>  
-        <a href="/admin/products/new" class="button is-primary">Nowy produkt</a>
-      </div>
+        <h1 class="subtitle">Produkty ulubione</h1>  
+        </div>
       <table class="table">
         <thead>
           <tr>
@@ -44,11 +39,11 @@ module.exports = ({ products }) => {
             <th>Opis</th>
             <th>Edytuj</th>
             <th>Usuń</th>
-            <th>Ulubione</th>
+            
           </tr>
         </thead>
         <tbody>
-          ${renderedProducts}
+          ${renderedFavorites}
         </tbody>
       </table>
     `

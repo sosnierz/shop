@@ -28,7 +28,7 @@ module.exports = ({ errors }) => {
 
             <div class="field">
             <label class="label">Informacje o produkcie</label>
-            <textarea class="input" name="opis" rows="200" cols="150"></textarea>
+            <textarea class="input" name="opis"></textarea>
             <p class="help is-danger">${getError(errors, 'opis')}</p>
           </div>
 

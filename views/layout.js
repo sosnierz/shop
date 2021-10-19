@@ -33,7 +33,7 @@ module.exports = ({ content }) => {
               <ul class="social">
                 <li><a href=""><i class="fab fa-facebook"></i></a></li>
                 <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="/"><i class="fa fa-star"></i> Sklep</a></li>
+                <li><a href="/shop"><i class="fa fa-star"></i> Sklep</a></li>
                 <li> <a href="/cart"><i class="fa fa-shopping-cart"></i> Koszyk</a></li>
               </ul>
                 </ul>
@@ -67,9 +67,7 @@ module.exports = ({ content }) => {
                   <li>Otawrte w godzinach od 8:00 do 18:00</li>
                 </ul>
             </div>
-          </div>
-         
-         
+          </div>    
           <div class="row justify-content-between">
           <div class="col-4">
           <p>&copy; 2021 Plm Led-Light Sp. z o.o. </p>

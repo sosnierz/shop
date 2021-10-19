@@ -5,6 +5,7 @@ const authRouter = require('./routes/admin/auth');
 const adminProductsRouter = require('./routes/admin/products');
 const productsRouter = require('./routes/products');
 const cartsRouter = require('./routes/carts');
+const favoritesRouter = require('./routes/admin/favorites');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(authRouter);
 app.use(productsRouter);
 app.use(adminProductsRouter);
 app.use(cartsRouter);
+app.use(favoritesRouter);
 
 app.listen(3000, () => {
   console.log('Listening');
