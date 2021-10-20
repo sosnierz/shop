@@ -12,7 +12,7 @@ module.exports = ({ products }) => {
             <div class="card-content">
               <h3 class="subtitle">${product.title}</h3>
               <h5>${product.price} zł</h5>
-              <p>${product.opis}</p>
+              <p>${product.information}</p>
             </div>
             <footer class="card-footer">
               <form action="/cart/products" method="POST">

@@ -7,7 +7,7 @@ module.exports = ({ products }) => {
       <tr>
         <td>${product.title}</td>
         <td>${product.price}</td>
-        <td>${product.opis}</td>
+        <td>${product.information}</td>
         <td>
           <a href="/admin/products/${product.id}/edit">
             <button class="button is-link">
@@ -20,11 +20,7 @@ module.exports = ({ products }) => {
             <button class="button is-danger">Usuń</button>
           </form>
         </td>
-        <td>
-        <form action="/admin/products/favorites" method="POST">
-        <button class="button is-danger">dodaj</button>
-        </button>
-        </td>
+        <td>${product.favorites}</td>
       </tr>
     `;
     })

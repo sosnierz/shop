@@ -32,10 +32,10 @@ module.exports =  ({ productsFavorite }) => {
          <nav class="navbar navbar-inverse">
             <div class="container-bottom">
               <ul class="nav-bottom">
-                <li><a href="">Start</a></li>
-                <li><a href="">Produkty</a></li>
-                <li><a href="">Dostawa i płatność</a></li>
-                <li><a href="">Kontakt</a></li>
+                <li><a href="/">Start</a></li>
+                <li><a href="/shop">Produkty</a></li>
+                <li><a href="/conditions">Dostawa i płatność</a></li>
+                <li><a href="/contacts">Kontakt</a></li>
               </ul> 
             </div>
           </nav> 

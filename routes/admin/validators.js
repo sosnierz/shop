@@ -11,9 +11,11 @@ module.exports = {
     .toFloat()
     .isFloat({ min: 1 })
     .withMessage('Wartość musi być większa od 1'),
-  requireText:check('opis')
+  requireText:check('information')
     .isLength({ min: 5, max: 1500 })
     .withMessage('Od 5 do 1500 znaków'),
+    requireFavorites:check('favorites')
+    .isIn([ 'true', 'false' ]),
   requireEmail: check('email')
     .trim()
     .normalizeEmail()

@@ -32,9 +32,17 @@ module.exports = ({ product, errors }) => {
 
             <div class="field">
             <label class="label">Informacje o produkcie</label>
-            <input value="${product.opis}" class="input" name="opis" />
-            <p class="help is-danger">${getError(errors, 'opis')}</p>
+            textarea  value="${product.information}" class="input" name="information" row="150" column="150" /></textarea>
+            <p class="help is-danger">${getError(errors, 'information')}</p>
+                      </div>
           </div>
+          <div class="field">
+          <label class="label">Dodaj do polecanych</label>  
+          <input type="checkbox" class="" name="favorites" value="true">
+            <label for="favorites"> Tak </label><br>
+            <input type="checkbox" class="" name="favorites" value="false">
+            <label for="favorites"> Nie </label><br>
+        </div>
 
             <br />
             <button class="button is-primary">Edytuj</button>
