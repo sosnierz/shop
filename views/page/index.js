@@ -1,33 +1,17 @@
 const layout = require('../layout');
 
-module.exports =  ({ productsFavorite }) => {
-  const renderedFavorites = productsFavorite
-    .map(productFavorite => {
-      return `
-        <div class="column is-one-quarter">
-          <div class="card product-card">
-            <figure>
-              <img src="data:image/png;base64, ${productFavorite.image}"/>
-            </figure>
-            <div class="card-content">
-              <h3 class="subtitle">${productFavorite.title}</h3>
-              <h5>${productFavorite.price} zł</h5>
-             
-            </div>
-           
-          </div>
-        </div>
-      `;
-    })
-    .join('\n');
-
-    return layout({
+module.exports =  () => {
+      return layout({
       content: `
-      <section class="banner">
+      <section class="banner ">
           <img class="slider" src="/images/lamp1.jpg" alt="">
-          <img class="slider" src="/images/lamp2.jpg" alt="">
-          <img class="slider" src="/images/lamp3.jpg" alt="">
-        </section>
+          <div class="dots">
+      <span id="one" class="active"></span>
+      <span id="two"></span>
+      <span id="three"></span>
+      <span id="four"></span>
+    </div>
+         </section>
         <section class="header-bottom">
          <nav class="navbar navbar-inverse">
             <div class="container-bottom">
@@ -35,7 +19,7 @@ module.exports =  ({ productsFavorite }) => {
                 <li><a href="/">Start</a></li>
                 <li><a href="/shop">Produkty</a></li>
                 <li><a href="/conditions">Dostawa i płatność</a></li>
-                <li><a href="/contacts">Kontakt</a></li>
+                <li><a href="/contact">Kontakt</a></li>
               </ul> 
             </div>
           </nav> 
@@ -46,7 +30,18 @@ module.exports =  ({ productsFavorite }) => {
         <a href="#"> <h1> Polecane </h1></a>
         </div>
         <div class="products">
-           ${renderedFavorites}  
+        <div class="column is-one-quarter">
+        <div class="card product-card">
+          <figure>
+            <img src=""/>
+          </figure>
+          <div class="card-content">
+            <h3 class="subtitle"></h3>
+            <h5></h5>
+           </div>
+         
+        </div>
+      </div> 
         </div> 
         </div>
         </section>
@@ -71,11 +66,8 @@ module.exports =  ({ productsFavorite }) => {
         <h2>Płatność przyt odbiorze lub przelewem</h2>
         <p>Wykonaj przelew ze swojego konta, prześlij nam potwierdzenie lub zapłać przyt odbiorze</p>
         </div> 
-        
-       
-       
         </section>
-
+        <script src="/js/home.js"></script>
       `
     });
 };

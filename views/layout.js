@@ -44,37 +44,39 @@ module.exports = ({ content }) => {
         ${content}
          
        <section id="myFooter">
-      
+       <h2>PLM Led-Light</h3>
           <div class="row justify-content-around">
              <div class="col-3">
                 <ul>
-                  <h3>PLM Led-Light</h3>
-                  <li><a href="#">Regulamin sklepu</a></li>
+                  <h4>PLM Led-Light</h4>
+                  <li><a href="/">Strona główna</a></li>
+                  <li><a href="/statute">Regulamin sklepu</a></li>
                   <li><a href="#">Polityka prywatności</a></li>
             </ul>
             </div>
             <div class="col-3">
                 <ul>
-                  <h3>Zakupy</h3>
-                  <li><a href="#">Dostawa i płatność</a></li>
-                  <li><a href="#">Zwrot i reklamacja</a></li>
+                  <h4>Zakupy</h4>
+                  <li><a href="/shop">Sklep</a></li>
+                  <li><a href="/conditions">Dostawa i płatność</a></li>
+                  <li><a href="/giveback">Zwrot i reklamacja</a></li>
                 </ul>
             </div>
             <div class="col-4">
                 <ul>
-                  <h3>Obsługa klienta</h3>
-                  <li>+48 796 545 585</li>
+                  <h4>Obsługa klienta</h4>
+                  <li><a href="/contact">Skontaktuj się z nami</a></li>
+                  <li><a href="tel:+48 796 545 585"> +48 796 545 585</a></li>
                   <li>Otawrte w godzinach od 8:00 do 18:00</li>
                 </ul>
             </div>
           </div>    
-          <div class="row justify-content-between">
+          <div class="row justify-content-center">
           <div class="col-4">
           <p>&copy; 2021 Plm Led-Light Sp. z o.o. </p>
            </div>
-          <div class="col-4">
-         <p>Design by Natso</p>
-             </div>
+         
+                      </div>
          
        
           
@@ -85,8 +87,7 @@ module.exports = ({ content }) => {
        </section>
        
       
-    
-       
+       <script scr="/js/home.js"></script>
       </body>
     
     </html>

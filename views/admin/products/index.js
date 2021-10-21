@@ -47,6 +47,8 @@ module.exports = ({ products }) => {
           ${renderedProducts}
         </tbody>
       </table>
+ 
+
     `
   });
 };
