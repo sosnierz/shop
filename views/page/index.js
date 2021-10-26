@@ -51,23 +51,23 @@ module.exports =  () => {
         <section class="gallery">
           <div class="images">
             <div class="image">
-            <a href=""></a>
-            <h2>Wszystkie artykuły</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Wszystkie artykuły</h2></a></div>
             <div class="image">
-            <a href=""><img src="/images/artykul.jpg" alt=""></a>
-            <h2>Lampy nowoczesne</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Lampy nowoczesne</h2></a></div>
             <div class="image">
-            <a href=""><img src="/images/artykul.jpg" alt=""></a>
-            <h2>Lampy klasyczne</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Lampy klasyczne</h2></a></div>
             <div class="image">
-            <a href=""><img src="/images/artykul.jpg" alt=""></a>
-            <h2>Lampy dziecięce</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Lampy dziecięce</h2></a></div>
             <div class="image">
-            <a href=""><img src="/images/artykul.jpg" alt=""></a>
-            <h2>Lampy stołowe</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Lampy stołowe</h2></a></div>
             <div class="image">
-            <a href=""><img src="/images/artykul.jpg" alt=""></a>
-            <h2>Lampy podłogowe</h2></div>
+            <a href=""><img src="/images/artykul.jpg" alt="">
+            <h2>Lampy podłogowe</h2></a></div>
           </div>
         </section>
        

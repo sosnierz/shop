@@ -91,7 +91,9 @@ section.banner {
 }
 
 section.banner>*,
-section.header-bottom>* {
+section.header-bottom>*,
+section.conditions,
+section.gallery {
   position: absolute;
   left: 50%;
   transform: translateX(-50%)
@@ -156,6 +158,7 @@ div.container-bottom {
 .conditions {
   grid-area: gallery;
   display: flex;
+  margin-top: 20PX;
 
 }
 
@@ -171,32 +174,58 @@ div.container-bottom {
 
 .image {
   flex-basis: 30%;
+  position: relative;
+
 }
 
-.gallery a {
+.image a {
+
   overflow: hidden;
   flex-basis: calc(50% - 40px);
   /* flex-grow: 1; */
   height: 20%;
   margin: 0px 20px;
-  background-color: black;
+
 }
 
-.images img {
-  min-width: 100%;
-  min-height: 100%;
+.image h2 {
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background-color: var(--primary);
+  opacity: 0.5;
+  color: var(--white);
+
+
+}
+
+.image img {
+  min-width: 50%;
+  min-height: 50%;
+  border-radius: 10%;
+}
+
+.zoom {
+  filter: brightness(70%);
 }
 
 /* Conditions */
-.conditions {
+.conditions,
+.images {
   grid-area: conditions;
   max-width: 1800px;
-  margin: 10px auto;
+  width: 100%;
+  top: 810px;
 }
 
-.condition {
+div.condition {
   text-align: center;
-  margin-left: 35px;
+  /* margin-left: 50px; */
+  flex-basis: 25%;
+  margin: 20px;
 
 }
 
