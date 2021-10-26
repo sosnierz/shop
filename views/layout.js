@@ -15,6 +15,7 @@ module.exports = ({ content }) => {
       </head>
 
       <body>
+      <div class="grid-container">
         <header class="header-top">
           <nav class="navbar navbar-top">
             <div class="container navbar-container">
@@ -43,51 +44,51 @@ module.exports = ({ content }) => {
         </header>
         ${content}
          
-       <section id="myFooter">
-       <h2>PLM Led-Light</h3>
-          <div class="row justify-content-around">
-             <div class="col-3">
-                <ul>
-                  <h4>PLM Led-Light</h4>
-                  <li><a href="/">Strona główna</a></li>
-                  <li><a href="/statute">Regulamin sklepu</a></li>
-                  <li><a href="#">Polityka prywatności</a></li>
-            </ul>
-            </div>
-            <div class="col-3">
-                <ul>
-                  <h4>Zakupy</h4>
-                  <li><a href="/shop">Sklep</a></li>
-                  <li><a href="/conditions">Dostawa i płatność</a></li>
-                  <li><a href="/giveback">Zwrot i reklamacja</a></li>
+       <footer id="myFooter">
+          <h2>PLM Led-Light</h3>
+              <div class="row justify-content-around">
+                <div class="col-3">
+                    <ul>
+                      <h4>PLM Led-Light</h4>
+                      <li><a href="/">Strona główna</a></li>
+                      <li><a href="/statute">Regulamin sklepu</a></li>
+                      <li><a href="#">Polityka prywatności</a></li>
                 </ul>
-            </div>
-            <div class="col-4">
-                <ul>
-                  <h4>Obsługa klienta</h4>
-                  <li><a href="/contact">Skontaktuj się z nami</a></li>
-                  <li><a href="tel:+48 796 545 585"> +48 796 545 585</a></li>
-                  <li>Otawrte w godzinach od 8:00 do 18:00</li>
-                </ul>
-            </div>
-          </div>    
-          <div class="row justify-content-center">
-          <div class="col-4">
-          <p>&copy; 2021 Plm Led-Light Sp. z o.o. </p>
-           </div>
-         
-                      </div>
-         
-       
+                </div>
+                <div class="col-3">
+                    <ul>
+                      <h4>Zakupy</h4>
+                      <li><a href="/shop">Sklep</a></li>
+                      <li><a href="/conditions">Dostawa i płatność</a></li>
+                      <li><a href="/giveback">Zwrot i reklamacja</a></li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul>
+                      <h4>Obsługa klienta</h4>
+                      <li><a href="/contact">Skontaktuj się z nami</a></li>
+                      <li><a href="tel:+48 796 545 585"> +48 796 545 585</a></li>
+                      <li>Otwarte w godzinach od 8:00 do 18:00</li>
+                    </ul>
+                </div>
+              </div>    
+              <div class="row justify-content-center">
+              <div class="col-4">
+              <p>&copy; 2021 Plm Led-Light Sp. z o.o. </p>
+              </div>
+            
+                          </div>
+            
           
-          
+              
+              
 
-         
-       </div>
-       </section>
+            
+          </div>
+       </footer>
        
       
-       <script scr="/js/home.js"></script>
+    </div>
       </body>
     
     </html>
