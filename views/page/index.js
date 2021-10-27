@@ -5,23 +5,21 @@ module.exports =  () => {
       content: `
       <section class="banner">
                   <img class="slider" src="/images/lamp1.jpg" alt="">
-                <div class="dots">
-                  <span id="one" class="active"></span>
-                  <span id="two"></span>
-                  <span id="three"></span>
-                  <span id="four"></span>
-               </div>
+                
       </section>
        
       <section class="header-bottom">
+      <a class="burger-nav" href=""><i class="fas fa-bars show"></i></a>
             <nav class="navbar navbar-inverse">
                 <div class="container-bottom">
+               
                   <ul class="nav-bottom">
                     <li><a href="/">Start</a></li>
                     <li><a href="/shop">Produkty</a></li>
                     <li><a href="/conditions">Dostawa i płatność</a></li>
                     <li><a href="/contact">Kontakt</a></li>
-                  </ul> 
+                    
+                    </ul> 
                 </div>
               </nav> 
         </section>
@@ -45,7 +43,7 @@ module.exports =  () => {
                 <div class="condition">
                 <img class="imgCondition" src="/images/payment.png" alt="">
                 <h2>Płatność przy odbiorze lub przelewem</h2>
-                <p>Wykonaj przelew ze swojego konta, prześlij nam potwierdzenie lub zapłać przyt odbiorze</p>
+                <p>Wykonaj przelew ze swojego konta, prześlij nam potwierdzenie lub zapłać przy odbiorze</p>
               </div> 
         </section>
         

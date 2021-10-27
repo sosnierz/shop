@@ -23,10 +23,10 @@ module.exports = ({ content }) => {
                 <ul class="social">
                   <li>
                   <li>
-                  <a href=""><i class="fa fa-phone"></i>+48 796 545 585</a>
+                  <a href=""tel:+48 796 545 585""><i class="fa fa-phone"></i><span>+48 796 545 585</span></a>
                 </li>
                 <li>
-                  <a href=""><i class="fa fa-envelope"></i> biuro.plmledlight@gmail.com</a>
+                  <a href="mailto:biuro.plmledlight@gmail.com"><i class="fa fa-envelope"></i> <span>biuro.plmledlight@gmail.com</span></a>
                 </li>
               </ul>
             </div>
@@ -34,8 +34,8 @@ module.exports = ({ content }) => {
               <ul class="social">
                 <li><a href=""><i class="fab fa-facebook"></i></a></li>
                 <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="/shop"><i class="fa fa-star"></i> Sklep</a></li>
-                <li> <a href="/cart"><i class="fa fa-shopping-cart"></i> Koszyk</a></li>
+                <li><a href="/shop"><i class="fa fa-star"></i><span> Sklep</span></a></li>
+                <li> <a href="/cart"><i class="fa fa-shopping-cart"></i><span> Koszyk</span></a></li>
               </ul>
                 </ul>
               </div>
@@ -44,11 +44,11 @@ module.exports = ({ content }) => {
         </header>
         ${content}
          
-       <footer id="myFooter">
-          <h2>PLM Led-Light</h3>
+       <footer class="footer">
+          <h2>PLM Led-Light</h2>
               <div class="row justify-content-around">
                 <div class="col-3">
-                    <ul>
+                <ul class="ulFooter">
                       <h4>PLM Led-Light</h4>
                       <li><a href="/">Strona główna</a></li>
                       <li><a href="/statute">Regulamin sklepu</a></li>
@@ -56,15 +56,15 @@ module.exports = ({ content }) => {
                 </ul>
                 </div>
                 <div class="col-3">
-                    <ul>
+                <ul class="ulFooter">
                       <h4>Zakupy</h4>
                       <li><a href="/shop">Sklep</a></li>
                       <li><a href="/conditions">Dostawa i płatność</a></li>
                       <li><a href="/giveback">Zwrot i reklamacja</a></li>
                     </ul>
                 </div>
-                <div class="col-4">
-                    <ul>
+                <div class="col-3">
+                    <ul class="ulFooter">
                       <h4>Obsługa klienta</h4>
                       <li><a href="/contact">Skontaktuj się z nami</a></li>
                       <li><a href="tel:+48 796 545 585"> +48 796 545 585</a></li>
@@ -73,18 +73,12 @@ module.exports = ({ content }) => {
                 </div>
               </div>    
               <div class="row justify-content-center">
-              <div class="col-4">
+              <div class="col-4 copy">
               <p>&copy; 2021 Plm Led-Light Sp. z o.o. </p>
               </div>
             
                           </div>
-            
-          
-              
-              
-
-            
-          </div>
+                 </div>
        </footer>
        
       
