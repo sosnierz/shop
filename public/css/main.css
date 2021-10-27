@@ -97,6 +97,11 @@ img.slider {
   height: 40px;
 }
 
+.burger-nav {
+  display: none;
+}
+
+
 div.container-bottom,
 nav.navbar.navbar-inverse {
   height: 40px;
