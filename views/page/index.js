@@ -9,16 +9,16 @@ module.exports =  () => {
       </section>
        
       <section class="header-bottom">
-      <a class="burger-nav" href=""><i class="fas fa-bars show"></i></a>
-            <nav class="navbar navbar-inverse">
+                 <nav class="navbar navbar-inverse">
                 <div class="container-bottom">
-               
+                <button id='burger' class="myHamburger">
+                  <i class="fas fa-bars show"></i>
+                  </button>
                   <ul class="nav-bottom">
                     <li><a href="/">Start</a></li>
                     <li><a href="/shop">Produkty</a></li>
                     <li><a href="/conditions">Dostawa i płatność</a></li>
                     <li><a href="/contact">Kontakt</a></li>
-                    
                     </ul> 
                 </div>
               </nav> 

@@ -1,0 +1,11 @@
+section.contact {
+    display: grid;
+    grid-gap: 20px;
+    box-shadow: var(--shadow);
+    margin: 12% auto;
+}
+
+form.row {
+    max-width: 800px;
+    padding: 20px;
+}

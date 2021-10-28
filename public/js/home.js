@@ -1,3 +1,14 @@
+// hamburger
+const hamburger = document.getElementById('burger');
+const navUl = document.getElementsByClassName('nav-bottom');
+
+hamburger.addEventListener('click', () => {
+    for (var i = 0; i < navUl.length; i++) {
+        navUl[i].classList.toggle("showHamburger");
+      }
+    
+});
+
 // header slider
 
 const slideList = [
@@ -38,4 +49,5 @@ imageDiv[i].addEventListener('mouseleave', function(ev){
     console.log('mouseleave div. Remove blue.');
     
 });
-}
+};
+
