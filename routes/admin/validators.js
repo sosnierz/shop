@@ -14,8 +14,24 @@ module.exports = {
   requireText:check('information')
     .isLength({ min: 5, max: 1500 })
     .withMessage('Od 5 do 1500 znaków'),
-    requireFavorites:check('favorites')
+  requireShine:check('shine')
     .isIn([ 'true', 'false' ]),
+  requireModel:check('model')
+    .isLength({ min: 2, max: 40 })
+    .withMessage('Od 2 do 40 znaków'),
+  requireCategory:check('category')
+  .isIn([ 'klasyczne', 'nowoczesne', 'dzieciece', 'sufitowe', 'kinkietowe', 'stolowe', 'stojace' ]),
+  requireFabric:check('fabric')
+  .isIn([ 'white', 'black', 'silver', 'gold', 'grey', 'copper', 'oak', 'beech', 'glass', 'venge', 'multiColor' ]),
+  requireSize:check('size')
+  .trim()
+  .isLength({ min: 2, max: 40 })
+  .withMessage('Od 2 do 40 znaków'),
+  requireBulb:check('bulb')
+  .trim()
+    .toFloat()
+    .isFloat({ min: 1 })
+    .withMessage('Wartość musi być większa/równa 1'),
   requireEmail: check('email')
     .trim()
     .normalizeEmail()

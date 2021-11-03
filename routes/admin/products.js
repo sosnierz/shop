@@ -6,7 +6,7 @@ const productsRepo = require('../../repositories/products');
 const productsNewTemplate = require('../../views/admin/products/new');
 const productsIndexTemplate = require('../../views/admin/products/index');
 const productsEditTemplate = require('../../views/admin/products/edit');
-const { requireTitle, requirePrice, requireText, requireFavorites } = require('./validators');
+const { requireTitle, requirePrice, requireText, requireModel, requireCategory, requireBulb, requireFabric, requireShine, requireSize } = require('./validators');
 
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
@@ -25,12 +25,15 @@ router.post(
   '/admin/products/new',
   requireAuth,
   upload.single('image'),
-  [requireTitle, requirePrice, requireText, requireFavorites],
+ 
+    [requireTitle, requirePrice, requireText, requireModel, requireCategory, requireBulb, requireFabric, requireShine, requireSize],
   handleErrors(productsNewTemplate),
   async (req, res) => {
     const image = req.file.buffer.toString('base64');
-    const { title, price, information, favorites } = req.body;
-    await productsRepo.create({ title, price, image, information, favorites });
+    
+    
+    const { title, price, information, model, category, fabric, shine, size, bulb } = req.body;
+    await productsRepo.create({ title, price, image,  information, model, category, fabric, shine, size, bulb });
 
     res.redirect('/admin/products');
   }
@@ -50,7 +53,7 @@ router.post(
   '/admin/products/:id/edit',
   requireAuth,
   upload.single('image'),
-  [requireTitle, requirePrice, requireText, requireFavorites],
+  [requireTitle, requirePrice, requireText,],
   handleErrors(productsEditTemplate, async req => {
     const product = await productsRepo.getOne(req.params.id);
     return { product };
