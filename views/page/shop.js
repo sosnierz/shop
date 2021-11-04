@@ -3,28 +3,18 @@ const layout = require('../layout');
 module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
-      return `>
+      return `
       
-      <div class="column is-one-quarter">
-      <div class="card product-card">
-        <figure>
-          <img src="data:image/png;base64, ${product.image}"/>
-        </figure>
-        <div class="card-content">
-          <h3 class="subtitle">${product.title} ${product.model}</h3>
-          
-          <h5>${product.price} zł</h5>
-        </div>
-        <footer class="card-footer">
-          <form action="/cart/products" method="POST">
-            <input hidden value="${product.id}" name="productId" />
-            <button class="button has-icon is-inverted">
-              <i class="fa fa-shopping-cart"></i> Kup
-            </button>
-          </form>
-        </footer>
-      </div>
-    </div>
+     <div class="image shopProduct">
+        <img src="data:image/png;base64, ${product.image}"/>
+        <h3 class="subtitle">${product.title} ${product.model}</h3>
+        <h5>${product.price} zł</h5>
+        <form action="/cart/products" method="POST">
+        <input hidden value="${product.id}" name="productId" />
+        <button class="button has-icon is-inverted">
+        <i class="fa fa-shopping-cart"></i> Kup </button>
+        </form>
+     </div>
     
       `;
     })
@@ -126,23 +116,17 @@ module.exports = ({ products }) => {
 <div class="field">
 <h1>Sklep firmowy</h1>
 <div class="input-group mb-3">
-  <button class="btn btn-outline-secondary" type="button" id="button-addon1">Szukaj</button>
-  <input type="text" class="form-control" placeholder="Wyszukaj" aria-label="Example text with button addon" aria-describedby="button-addon1">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
+  <input type="text" class="form-control" placeholder="Wpisz nazwę produktu" aria-label="Example text with button addon" aria-describedby="button-addon1">
 </div>
 
 </div>
   </section>
   <main class="allShop">
-    <div class="container">
-            <div class="columns">
-            <div class="columns products">
-              <div class="column is-four-fifths">
+    <div class="images">
                 
                     ${renderedProducts}  
-                </div>
-              </div> 
-            </div>
-      </div>   
+     </div>           
   </main>
 </section>
               `
