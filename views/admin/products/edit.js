@@ -11,12 +11,16 @@ module.exports = ({ product, errors }) => {
           <form method="POST" enctype="multipart/form-data">
             <div class="field">
               <label class="label">Nazwa</label>
-              <input value="${
-                product.title
-              }" class="input" placeholder="Nazwa" name="title">
+              <input value="${product.title}" class="input" placeholder="Nazwa" name="title">
               <p class="help is-danger">${getError(errors, 'title')}</p>
             </div>
             
+            <div class="field">
+            <label class="label">Model</label>
+            <input value="${product.model}" class="input" placeholder="Model" name="model">
+            <p class="help is-danger">${getError(errors, 'model')}</p>
+          </div>
+
             <div class="field">
               <label class="label">Cena</label>
               <input value="${
@@ -72,6 +76,9 @@ module.exports = ({ product, errors }) => {
 
               <input type="checkbox" class="" name="fabric" value="black">
               <label for="fabric"> Czarny </label><br>
+
+              <input type="checkbox" class="" name="fabric" value="red">
+              <label for="fabric"> Czerwony </label><br>
              
 
               <input type="checkbox" class="" name="fabric" value="silver">
@@ -126,11 +133,12 @@ module.exports = ({ product, errors }) => {
               <input value="${product.bulb}" class="input" placeholder="Liczba" name="bulb">
               <p class="help is-danger">${getError(errors, 'bulb')}</p>
             </div>
+            
             <div class="field">
             <label class="label">Informacje o produkcie</label>
-            textarea  value="${product.information}" class="input" name="information" row="150" column="150" /></textarea>
+            <textarea value="${product.information}" class="input" name="information" row="150" column="150"></textarea>
             <p class="help is-danger">${getError(errors, 'information')}</p>
-                      </div>
+            </div>
           </div>
           
             <br />

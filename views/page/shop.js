@@ -3,14 +3,16 @@ const layout = require('../layout');
 module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
-      return `
+      return `>
+      
       <div class="column is-one-quarter">
       <div class="card product-card">
         <figure>
           <img src="data:image/png;base64, ${product.image}"/>
         </figure>
         <div class="card-content">
-          <h3 class="subtitle">${product.title}</h3>
+          <h3 class="subtitle">${product.title} ${product.model}</h3>
+          
           <h5>${product.price} zł</h5>
         </div>
         <footer class="card-footer">
@@ -23,6 +25,7 @@ module.exports = ({ products }) => {
         </footer>
       </div>
     </div>
+    
       `;
     })
     .join('\n');
@@ -132,8 +135,9 @@ module.exports = ({ products }) => {
   <main class="allShop">
     <div class="container">
             <div class="columns">
+            <div class="columns products">
               <div class="column is-four-fifths">
-                <div class="columns products">
+                
                     ${renderedProducts}  
                 </div>
               </div> 

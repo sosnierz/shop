@@ -12,7 +12,7 @@ hamburger.addEventListener('click', () => {
 // header slider
 
 const slideList = [
-    "/images/lamp1.jpg", "/images/lamp2.jpg", "/images/lamp3.jpg", "/images/lamp4.jpg"]
+    "/images/layout/lamp1.jpg", "/images/layout/lamp2.jpg", "/images/layout/lamp3.jpg", "/images/layout/lamp4.jpg"]
     
    
    const image = document.querySelector('img.slider');

@@ -73,6 +73,9 @@ module.exports = ({ errors }) => {
 
               <input type="checkbox" class="" name="fabric" value="black">
               <label for="fabric"> Czarny </label><br>
+              
+              <input type="checkbox" class="" name="fabric" value="red">
+              <label for="fabric"> Czerwony </label><br>
              
 
               <input type="checkbox" class="" name="fabric" value="silver">
@@ -129,7 +132,7 @@ module.exports = ({ errors }) => {
             </div>
             <div class="field">
             <label class="label">Informacje o produkcie</label>
-            <textarea class="input" name="information" row="150" column="150" /></textarea>
+            <textarea class="input" name="information" row="150" column="150"></textarea>
             <p class="help is-danger">${getError(errors, 'information')}</p>
           </div>
             

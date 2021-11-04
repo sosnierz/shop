@@ -60,7 +60,9 @@ button.btn {
     background-color: cadetblue;
 }
 
-
+div.column .is-one-quarter {
+    width: 500px;
+}
 
 #cart h3 {
     margin-top: 50px;
