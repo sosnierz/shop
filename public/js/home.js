@@ -33,21 +33,16 @@ const slideList = [
    
   
 
-//    hoover img zoom
+//    hoover img brighness
 const imageDiv = document.querySelectorAll('.image>a>img');
 
 
 for(let i =0; i<imageDiv.length; i++){
 imageDiv[i].addEventListener('mouseenter', function(ev){
        ev.target.classList.add('zoom');
-    console.log('mouseenter div. Add blue.');
-    
 });
 imageDiv[i].addEventListener('mouseleave', function(ev){
-    
-        ev.target.classList.remove('zoom');
-    console.log('mouseleave div. Remove blue.');
-    
+        ev.target.classList.remove('zoom');  
 });
 };
 

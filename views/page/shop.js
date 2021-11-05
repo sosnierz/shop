@@ -1,21 +1,23 @@
 const layout = require('../layout');
 
 module.exports = ({ products }) => {
+  
   const renderedProducts = products
     .map(product => {
       return `
       
-     <div class="image shopProduct">
-        <img src="data:image/png;base64, ${product.image}"/>
+     <div class="image shopProduct ${product.category}">        
+     <img src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} ${product.model}</h3>
         <h5>${product.price} zł</h5>
         <form action="/cart/products" method="POST">
         <input hidden value="${product.id}" name="productId" />
-        <button class="button has-icon is-inverted">
-        <i class="fa fa-shopping-cart"></i> Kup </button>
+        <button class="button has-icon is-inverted">Dodaj do
+        <i class="fa fa-shopping-cart"></i></button>
         </form>
      </div>
     
+     
       `;
     })
     .join('\n');
@@ -28,15 +30,15 @@ module.exports = ({ products }) => {
         <h3>Filtry</h3>
           <div>
            <h4>Kategorie lamp</h4>
-             <ul>
-                <li data-filter="wszystkie"><a href="#"> Wszystkie produkty</a></li>
-                <li data-filter="nowoczesne"><a href="#"> Nowoczesne</a></li>
-                <li data-filter="klasyczne"><a href="#"> Klasyczne</a></li>
-                <li data-filter="dzieciece"><a href="#"> Dziecięce</a></li>
-                <li data-filter="sufitowe"><a href="#"> Sufitowe</a></li>
-                <li data-filter="kinkietowe"><a href="#"> Kinkietowe</a></li>
-                <li data-filter="stojace"><a href="#"> Stojące</a></li>
-                <li data-filter="stolowe"><a href="#"> Stołowe</a></li>
+             <ul class=>
+                <li><a class="category" data-filter="wszystkie" href="#"> Wszystkie produkty</a></li>
+                <li><a class="category" data-filter="nowoczesne" href="#"> Nowoczesne</a></li>
+                <li><a class="category" data-filter="klasyczne" href="#"> Klasyczne</a></li>
+                <li><a class="category" data-filter="dzieciece" href="#"> Dziecięce</a></li>
+                <li><a class="category" data-filter="sufitowe" href="#"> Sufitowe</a></li>
+                <li><a class="category" data-filter="kinkietowe" href="#"> Kinkietowe</a></li>
+                <li><a class="category" data-filter="stojace" href="#"> Stojące</a></li>
+                <li><a class="category" data-filter="stolowe" href="#"> Stołowe</a></li>
               </ul>
           </div>
           <div>
@@ -129,6 +131,7 @@ module.exports = ({ products }) => {
      </div>           
   </main>
 </section>
+<script src="/js/shop.js"></script>
               `
     });
 };
