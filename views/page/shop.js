@@ -5,8 +5,7 @@ module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
       return `
-      
-     <div class="image shopProduct ${product.category}">        
+               <div class="image shopProduct ${product.category.join(' ')} ">  
      <img src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} ${product.model}</h3>
         <h5>${product.price} zł</h5>
@@ -18,7 +17,7 @@ module.exports = ({ products }) => {
      </div>
     
      
-      `;
+      `
     })
     .join('\n');
 
@@ -30,8 +29,8 @@ module.exports = ({ products }) => {
         <h3>Filtry</h3>
           <div>
            <h4>Kategorie lamp</h4>
-             <ul class=>
-                <li><a class="category" data-filter="wszystkie" href="#"> Wszystkie produkty</a></li>
+             <ul >
+                <li><a class="category active" data-filter="all" href="#"> Wszystkie produkty</a></li>
                 <li><a class="category" data-filter="nowoczesne" href="#"> Nowoczesne</a></li>
                 <li><a class="category" data-filter="klasyczne" href="#"> Klasyczne</a></li>
                 <li><a class="category" data-filter="dzieciece" href="#"> Dziecięce</a></li>
