@@ -1,40 +1,196 @@
 const shopProduct = document.querySelectorAll('.shopProduct');
 const allA = document.querySelectorAll('.category');
+const fabrics = document.querySelectorAll(".fabric");
+const aPrice = document.querySelectorAll('.input.price');
+const bulbs = document.querySelectorAll('.bulb');
+const btn = document.querySelector('.clear');
+const min = document.querySelector('#min');
+const max = document.querySelector('#max');
+    
+    
 
-
-for (i = 0; i < allA.length; i++) {
-    allA[i].addEventListener('click', (e) => {
-        e.preventDefault()
-        const filter = e.target.dataset.filter;
-        console.log(filter);
-            shopProduct.forEach((product)=> {
-            if (filter === 'all'){
-                product.style.display = 'block'
-            } else {
-                if (product.classList.contains(filter)){
-                    product.style.display = 'block'
-                } else {
-                    product.style.display = 'none'
-                }
-            }
-        });
-    });
-};
-const search = document.querySelector(".form-control");
-const productName = document.querySelectorAll(".subtitles h3");
-       
-search.addEventListener("keyup", filterProducts);
-
-function filterProducts(e) {
-    const text = e.target.value.toLowerCase();
-    // console.log(productName[0]);
-    productName.forEach(function(product) {
-        const item = product.firstChild.textContent;
-        if (item.toLowerCase().indexOf(text) != -1) {
-            product.parentElement.parentElement.style.display = "block"
-        } else {
-            product.parentElement.parentElement.style.display = "none"
+// fabric
+function change() {
+   
+    const filters = {
+    category: getClassOfCheckedCheckboxes(allA),
+     fabric: getClassOfCheckedCheckboxes(fabrics),
+     prices:getClassOfCheckedCheckboxes(aPrice),
+     bulb:getClassOfCheckedCheckboxes(bulbs)
+         };
+  
+    filterResults(filters);
+  }
+  
+  function getClassOfCheckedCheckboxes(checkboxes) {
+    let classes = [];
+  
+    if (checkboxes && checkboxes.length > 0) {
+      for (let i = 0; i < checkboxes.length; i++) {
+        var cb = checkboxes[i];
+  
+        if (cb.checked) {
+          classes.push(cb.getAttribute("data-filter"));
         }
-    })
-}       
-           
+      }
+    }
+  
+    return classes;
+  }
+  
+  function filterResults(filters) {
+   
+    let hiddenElems = [];
+  
+    if (!shopProduct || shopProduct.length <= 0) {
+      return;
+    }
+  
+    for (let i = 0; i < shopProduct.length; i++) {
+      let el = shopProduct[i];
+//   fabric
+      if (filters.fabric.length > 0) {
+        let isHidden = true;
+  
+        for (let j = 0; j < filters.fabric.length; j++) {
+          let filter = filters.fabric[j];
+  
+          if (el.classList.contains(filter)) {
+            isHidden = false;
+            break;
+          }
+         
+        }
+  
+        if (isHidden) {
+          hiddenElems.push(el);
+        }
+      }  
+    //   category
+      if (filters.category.length > 0) {
+        let isHidden = true;
+  
+        for (let z = 0; z < filters.category.length; z++) {
+          let filter = filters.category[z];
+  
+          if (el.classList.contains(filter)) {
+            isHidden = false;
+            break;
+          }
+         
+        }
+          if (isHidden) {
+          hiddenElems.push(el);
+        }
+      } 
+    //   bulb
+      if (filters.bulb.length > 0) {
+        let isHidden = true;
+  
+        for (let p = 0; p < filters.bulb.length; p++) {
+          let filter = filters.bulb[p];
+  
+          if (el.classList.contains(filter)) {
+            isHidden = false;
+            break;
+          }
+          
+        }
+  
+        if (isHidden) {
+          hiddenElems.push(el);
+        }
+      }  
+    //   price
+   
+}
+  
+               
+  
+    for (let i = 0; i < shopProduct.length; i++) {
+      shopProduct[i].style.display = "block";
+    }
+  
+    if (hiddenElems.length <= 0) {
+      return;
+    }
+  
+    for (let i = 0; i < hiddenElems.length; i++) {
+      hiddenElems[i].style.display = "none";
+    }
+   
+// button uncheckbox  
+    function uncheckAll() {
+        document.querySelectorAll('input[type="checkbox"]')
+          .forEach(el => el.checked = false);
+          for (let i = 0; i < shopProduct.length; i++) {
+            shopProduct[i].style.display = "block";
+      }
+    }
+      btn.addEventListener('click', uncheckAll)      
+    
+  };
+
+
+// Search input
+const input = document.querySelector('#search');
+const divImages = document.querySelector('.images');
+const divImage = document.querySelectorAll('.image');
+const h3Elements = document.querySelectorAll('.subtitle');
+
+const searchTask = (e) => {
+ const searchText = e.target.value.toLowerCase()
+ let tasks = [...divImage];
+ console.log(tasks);
+ tasks = tasks.filter(divImages => divImages.textContent.toLowerCase().includes(searchText))
+ divImages.textContent = "";
+ tasks.forEach(h3Elements => divImages.appendChild(h3Elements))
+}
+input.addEventListener('input', searchTask)
+
+// Sorting cards
+let field = document.querySelector('.images');
+let div = Array.from(field.children)
+let select = document.querySelector('.sorting');
+let ar=[];
+
+for (let i of div){
+  const last = i.lastElementChild;
+  const x = last.innerHTML.trim();
+  const y = Number(x);
+  i.setAttribute('data-price', y);
+  ar.push(i);
+}
+
+select.onchange = sorting;
+function sorting() {
+
+  if(this.value === "Sort") {
+    while(field.firstChild){
+      field.removeChild(field.firstChild);
+    }
+    field.append(...ar)
+  }
+  if(this.value === "SortPriceHigh"){
+    sortElement(field, div, true);
+  }
+  if(this.value === "SortPriceLoww"){
+    sortElement(field, div, false);
+  }
+  // if(this.value === "SortPriceHigh"){}
+  // if(this.value === "SortPriceHigh"){}
+}
+
+function sortElement(field, div, asc){
+let dm, sortDiv;
+dm = asc ? 3 : -3;
+sortDiv = div.sort((a, b) => {
+  const ax = a.getAttribute('data-price');
+  const bx = b.getAttribute('data-price');
+  return ax>bx ? (3*dm) : (-3*dm);
+})
+while(field.firstChild){
+  field.removeChild(field.firstChild);
+}
+field.append(...sortDiv)
+}

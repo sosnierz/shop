@@ -7,7 +7,7 @@ module.exports = ({ products }) => {
       <tr>
         <td>${product.title}</td>
         <td>${product.model}</td>
-        <td>${product.price}</td>
+        <td>${product.price.toFixed(2)}</td>
         <td>${product.category}</td>
         <td>${product.fabric}</td>
         <td>${product.shine}</td>

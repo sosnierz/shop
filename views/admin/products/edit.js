@@ -24,7 +24,7 @@ module.exports = ({ product, errors }) => {
             <div class="field">
               <label class="label">Cena</label>
               <input value="${
-                product.price
+                product.price.toFixed(2)
               }" class="input" placeholder="Cena" name="price">
               <p class="help is-danger">${getError(errors, 'price')}</p>
             </div>
@@ -106,9 +106,18 @@ module.exports = ({ product, errors }) => {
                           
               <input type="checkbox" class="" name="fabric" value="venge">
               <label for="fabric"> Venge </label><br>
-              
-              <input type="checkbox" class="" name="fabric" value="glass">
-              <label for="fabric"> Szkło </label><br>
+                           
+              <input type="checkbox" class="" name="fabric" value="wood">
+              <label for="fabric">Drewno w kolorze lampy </label><br>
+
+              <input type="checkbox" class="" name="fabric" value="metal">
+              <label for="fabric"> Metal</label><br>
+
+              <input  type="checkbox"  name="fabric" value="material">
+              <label for="fabric">Materiał</label><br>
+         
+              <input class="fabric" type="checkbox" data-filter="plastic" name="plastic">
+              <label for="glass">Plastik</label><br>
               
               <input type="checkbox" class="" name="fabric" value="multiColor">
               <label for="fabric"> Kolorowe </label><br>
@@ -136,9 +145,8 @@ module.exports = ({ product, errors }) => {
             
             <div class="field">
             <label class="label">Informacje o produkcie</label>
-            <textarea value="${product.information}" class="input" name="information" row="150" column="150"></textarea>
+            <input value="${product.information}"class="input info" name="information">
             <p class="help is-danger">${getError(errors, 'information')}</p>
-            </div>
           </div>
           
             <br />

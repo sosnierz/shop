@@ -104,9 +104,21 @@ module.exports = ({ errors }) => {
               <input type="checkbox" class="" name="fabric" value="venge">
               <label for="fabric"> Venge </label><br>
               
+              <input type="checkbox" class="" name="fabric" value="wood">
+              <label for="fabric"> Drewno w kolorze lampy </label><br>
+              
               <input type="checkbox" class="" name="fabric" value="glass">
               <label for="fabric"> Szkło </label><br>
+             
+              <input type="checkbox" class="" name="fabric" value="material">
+              <label for="fabric"> Szkło </label><br>
               
+              <input type="checkbox"  name="fabric" value="metal">
+              <label for="fabric">Metal</label><br>
+         
+              <input  type="checkbox"  name="fabric" value="material">
+              <label for="fabric">Materiał</label><br>
+                        
               <input type="checkbox" class="" name="fabric" value="multiColor">
               <label for="fabric"> Kolorowe </label><br>
               
@@ -127,7 +139,7 @@ module.exports = ({ errors }) => {
             </div>
             <div class="field">
               <label class="label">Ilość żarówek</label>
-              <input class="input" placeholder="Liczba" name="bulb">
+              <input class="input" placeholder="Liczba" name="bulb" value={}>
               <p class="help is-danger">${getError(errors, 'bulb')}</p>
             </div>
             <div class="field">
