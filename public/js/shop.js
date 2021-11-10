@@ -155,8 +155,8 @@ let select = document.querySelector('.sorting');
 let ar=[];
 
 for (let i of div){
-  const last = i.lastElementChild;
-  const x = last.innerHTML.trim();
+  const h3 = i.children[2];
+  const x = h3.innerHTML.trim();
   const y = Number(x);
   i.setAttribute('data-price', y);
   ar.push(i);
@@ -174,21 +174,22 @@ function sorting() {
   if(this.value === "SortPriceHigh"){
     sortElement(field, div, true);
   }
-  if(this.value === "SortPriceLoww"){
-    sortElement(field, div, false);
-  }
+  
   // if(this.value === "SortPriceHigh"){}
   // if(this.value === "SortPriceHigh"){}
 }
 
 function sortElement(field, div, asc){
 let dm, sortDiv;
-dm = asc ? 3 : -3;
+dm = asc ? 1 : -1;
 sortDiv = div.sort((a, b) => {
   const ax = a.getAttribute('data-price');
   const bx = b.getAttribute('data-price');
-  return ax>bx ? (3*dm) : (-3*dm);
-})
+  return bx-ax
+     
+  })
+
+
 while(field.firstChild){
   field.removeChild(field.firstChild);
 }

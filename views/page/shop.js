@@ -8,12 +8,13 @@ module.exports = ({ products }) => {
   <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" >  
         <img class="" src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} <br>${product.model}</h3>
+        <h5>${product.price.toFixed(2)}</h5>
         <form action="/cart/products" method="POST">
           <input hidden value="${product.id}" name="productId" />
           <button class="button has-icon is-inverted">Dodaj do
           <i class="fa fa-shopping-cart"></i></button>
         </form>
-        <h5>${product.price.toFixed(2)}</h5>
+       
      </div>
     
      
