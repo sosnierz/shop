@@ -1,4 +1,5 @@
 const shopProduct = document.querySelectorAll('.shopProduct');
+
 const allA = document.querySelectorAll('.category');
 const fabrics = document.querySelectorAll(".fabric");
 const aPrice = document.querySelectorAll('.input.price');
@@ -149,6 +150,7 @@ const searchTask = (e) => {
 input.addEventListener('input', searchTask)
 
 // Sorting cards
+
 let field = document.querySelector('.images');
 let div = Array.from(field.children)
 let select = document.querySelector('.sorting');
@@ -157,7 +159,7 @@ let ar=[];
 for (let i of div){
   const h3 = i.children[2];
   const x = h3.innerHTML.trim();
-  const y = Number(x);
+  const y = Number(x.replace('zł', ''));
   i.setAttribute('data-price', y);
   ar.push(i);
 }
@@ -174,7 +176,10 @@ function sorting() {
   if(this.value === "SortPriceHigh"){
     sortElement(field, div, true);
   }
-  
+  if(this.value === "SortPriceLoww"){
+    sortElement(field, div, false);
+    return bx-ax
+  }
   // if(this.value === "SortPriceHigh"){}
   // if(this.value === "SortPriceHigh"){}
 }
@@ -185,11 +190,8 @@ dm = asc ? 1 : -1;
 sortDiv = div.sort((a, b) => {
   const ax = a.getAttribute('data-price');
   const bx = b.getAttribute('data-price');
-  return bx-ax
-     
-  })
-
-
+  return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+})
 while(field.firstChild){
   field.removeChild(field.firstChild);
 }

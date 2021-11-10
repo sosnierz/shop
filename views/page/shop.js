@@ -8,7 +8,7 @@ module.exports = ({ products }) => {
   <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" >  
         <img class="" src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} <br>${product.model}</h3>
-        <h5>${product.price.toFixed(2)}</h5>
+        <h5 >${product.price.toFixed(2)} zł</h5>
         <form action="/cart/products" method="POST">
           <input hidden value="${product.id}" name="productId" />
           <button class="button has-icon is-inverted">Dodaj do
@@ -204,8 +204,8 @@ module.exports = ({ products }) => {
   <option value="Sort">Sortuj</option>
   <option value="SortA-Z">Nazwa A-Z</option>
   <option value="SortZ-A">Nazwa Z-A</option>
-  <option value="SortPriceHigh">Cena rosnąco</option>
-  <option value="SortPriceLow">Cena malejąco</option>
+  <option value="high">Cena rosnąco</option>
+  <option value="low">Cena malejąco</option>
 </select>
   
     <div class="images">
