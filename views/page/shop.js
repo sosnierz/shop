@@ -5,13 +5,13 @@ module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
       return `
-  <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" >  
-        <img class="" src="data:image/png;base64, ${product.image}"/>
+  <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <form action="/shop/${product.id}" method="POST"> 
+        <a href="/shop/${product.id}"><img class="" src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} <br>${product.model}</h3>
-        <h5 >${product.price.toFixed(2)} zł</h5>
+        <h5 >${product.price.toFixed(2)} zł</h5></a></form>
         <form action="/cart/products" method="POST">
           <input hidden value="${product.id}" name="productId" />
-          <button class="button has-icon is-inverted">Dodaj do
+          <button class="button has-icon is-inverted addCard">Dodaj do
           <i class="fa fa-shopping-cart"></i></button>
         </form>
        
@@ -200,21 +200,44 @@ module.exports = ({ products }) => {
 </div>
   </section>
   <main class="allShop">
-  <select class="sorting">
-  <option value="Sort">Sortuj</option>
-  <option value="SortA-Z">Nazwa A-Z</option>
-  <option value="SortZ-A">Nazwa Z-A</option>
-  <option value="high">Cena rosnąco</option>
-  <option value="low">Cena malejąco</option>
-</select>
-  
+  <div>
+  <div class="sort">
+      <select class="sorting">
+    <option value="Sort">Sortuj według:</option>
+    <option value="sortA">Nazwa A-Z</option>
+    <option value="sortZ">Nazwa Z-A</option>
+    <option value="high">Cena rosnąco</option>
+    <option value="low">Cena malejąco</option>
+  </select>
+  </div>
+  <div class="col-12 col-md-4 text-center">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center float-md-right mb-0">
+          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+          <li class="page-item"><a class="page-link">1</a></li>
+          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  <div>
     <div class="images">
                 
                     ${renderedProducts}  
-     </div>           
+     </div>
+     <div class="col-12 col-md-4 text-center">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center float-md-right mb-0">
+          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
+          <li class="page-item"><a class="page-link">1</a></li>
+          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+      </nav>
+    </div>           
   </main>
+  
 </section>
 <script src="/js/shop.js"></script>
+<script src="/js/cart.js"></script>
               `
     });
 };

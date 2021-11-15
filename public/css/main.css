@@ -55,6 +55,10 @@ html {
 
 }
 
+.item_shop {
+  margin-left: 5px;
+}
+
 .navbar ul.social li a,
 ul.nav-bottom li a {
   color: var(--white);

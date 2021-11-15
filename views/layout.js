@@ -1,4 +1,5 @@
 module.exports = ({ content }) => {
+ 
   return `
     <!DOCTYPE html>
       <html lang="pl">
@@ -20,33 +21,35 @@ module.exports = ({ content }) => {
 
       <body>
       <div class="grid-container">
-        <header class="header-top">
-          <nav class="navbar navbar-top">
-            <div class="container navbar-container">
-              <div>
-              
-                <ul class="social">
-               
-                  <li>
-                  <a href=""tel:+48 796 545 585""><i class="fa fa-phone"></i><span>+48 796 545 585</span></a>
-                </li>
-                <li>
-                  <a href="mailto:biuro.plmledlight@gmail.com"><i class="fa fa-envelope"></i> <span>biuro.plmledlight@gmail.com</span></a>
-                </li>
-              </ul>
-            </div>
+      <header class="header-top">
+        <nav class="navbar navbar-top">
+          <div class="container navbar-container">
             <div>
+            
               <ul class="social">
-                <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="/shop"><i class="fa fa-star"></i><span> Sklep</span></a></li>
-                <li> <a href="/cart"><i class="fa fa-shopping-cart"></i><span> Koszyk</span></a></li>
-              </ul>
-                </ul>
-              </div>
+             
+                <li>
+                <a href="tel:+48 796 545 585"><i class="fa fa-phone"></i><span>+48 796 545 585</span></a>
+              </li>
+              <li>
+                <a href="mailto:biuro.plmledlight@gmail.com"><i class="fa fa-envelope"></i> <span>biuro.plmledlight@gmail.com</span></a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="social">
+              <li><a href=""><i class="fab fa-facebook"></i></a></li>
+              <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="/"><i class="fas fa-home"></i></a></li>
+              <li><a href="/shop"><i class="fas fa-store"></i></a></li>
+              <li> <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop"></span></a></li>
+            </ul>
+              
             </div>
-        </nav>
-        </header>
+          </div>
+      </nav>
+      </header>
+     
         ${content}
          
        <footer class="footer">

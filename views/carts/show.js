@@ -8,7 +8,12 @@ module.exports = ({ items }) => {
   const totalPrice = items.reduce((prev, item)=> {
     return prev + item.quantity * item.product.price;
   }, 0);
-  
+  const totalQuantity = items.reduce((prev, item)=> {
+    return prev + item.quantity;
+  }, 0);
+
+ 
+
   const renderedItems = items
     .map(item => {
       return `
@@ -17,7 +22,11 @@ module.exports = ({ items }) => {
           <div class="cart-right">
             <div>
               
-              ${item.product.price} zł X  ${item.quantity} = 
+             <span> ${item.product.price} zł </span>
+              <span class="minus" onclick="changeNumberQuantity('minus', ${item.id})">-</span>
+              <span class="number">${item.quantity}</span>
+              <span class="plus" onclick="changeNumberQuantity('plus', ${item.id})">+</span>           
+          </div> 
             </div>
             <div class="price is-size-4">
               ${item.product.price * item.quantity}zł
@@ -45,20 +54,21 @@ module.exports = ({ items }) => {
           <div class="column"></div>
           <div class="column is-four-fifths">
             <h3 class="subtitle"><b>Koszyk</b></h3>
-            <div>
+            <div class = "itemsCart"value="${totalQuantity}">
               ${renderedItems}
             </div>
             <div class="total message is-info">
               <div class="message-header">
                 Razem
               </div>
-              <h1 class="title">${totalPrice}zł</h1>
+              <h1 class="title">Cena: ${totalPrice}zł </h1>
               <button class="button is-primary">Kup</button>
             </div>
           </div>
           <div class="column"></div>
         </div>
       </div>
+      <script src="/js/cart.js"></script>
     `
   });
 };

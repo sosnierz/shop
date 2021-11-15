@@ -1,5 +1,4 @@
 const shopProduct = document.querySelectorAll('.shopProduct');
-
 const allA = document.querySelectorAll('.category');
 const fabrics = document.querySelectorAll(".fabric");
 const aPrice = document.querySelectorAll('.input.price');
@@ -7,7 +6,8 @@ const bulbs = document.querySelectorAll('.bulb');
 const btn = document.querySelector('.clear');
 const min = document.querySelector('#min');
 const max = document.querySelector('#max');
-    
+
+   
     
 
 // fabric
@@ -150,10 +150,10 @@ const searchTask = (e) => {
 input.addEventListener('input', searchTask)
 
 // Sorting cards
-
-let field = document.querySelector('.images');
+const subtitle = document.querySelectorAll('.subtitle');
+const field = document.querySelector('.images');
 let div = Array.from(field.children)
-let select = document.querySelector('.sorting');
+const select = document.querySelector('.sorting');
 let ar=[];
 
 for (let i of div){
@@ -167,21 +167,28 @@ for (let i of div){
 select.onchange = sorting;
 function sorting() {
 
-  if(this.value === "Sort") {
+  if(this.value === 'Sort') {
     while(field.firstChild){
       field.removeChild(field.firstChild);
     }
     field.append(...ar)
   }
-  if(this.value === "SortPriceHigh"){
+  if(this.value === "high"){
     sortElement(field, div, true);
   }
-  if(this.value === "SortPriceLoww"){
+  if(this.value === "low"){
     sortElement(field, div, false);
-    return bx-ax
+ 
   }
-  // if(this.value === "SortPriceHigh"){}
-  // if(this.value === "SortPriceHigh"){}
+  if(this.value === "sortA"){
+    sortEl();
+ 
+  }
+  if(this.value === "sortZ"){
+    sortEl();
+ 
+  }
+
 }
 
 function sortElement(field, div, asc){
@@ -190,10 +197,24 @@ dm = asc ? 1 : -1;
 sortDiv = div.sort((a, b) => {
   const ax = a.getAttribute('data-price');
   const bx = b.getAttribute('data-price');
-  return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+  return ax > bx ? (1*dm) : (-1*dm) ;
 })
 while(field.firstChild){
   field.removeChild(field.firstChild);
 }
 field.append(...sortDiv)
 }
+
+  function sortEl(){
+   
+     sortNames = div.sort((a, b)=> { 
+      var item1 = document.querySelector(".subtitle").toUpperCase();
+      var item2 = document.querySelector(".subtitle").toUpperCase();
+      return item1-item2
+  
+  });
+  field.append(...sortNames)
+}
+
+
+
