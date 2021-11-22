@@ -49,7 +49,7 @@ router.get('/shop/:id', async (req, res) => {
      return res.send('Product not found');
    }
     res.send(pageIdTemplate({ product }));
- });
+})
 
 
 module.exports = router;

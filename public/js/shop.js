@@ -6,9 +6,16 @@ const bulbs = document.querySelectorAll('.bulb');
 const btn = document.querySelector('.clear');
 const min = document.querySelector('#min');
 const max = document.querySelector('#max');
+const burger = document.querySelector(".burgers");
+const activeAside = document.querySelectorAll(".active");
 
-   
-    
+
+// active aside
+burger.addEventListener("click", function () {
+  for (let i = 0; i < activeAside.length; i++) {
+      activeAside[i].classList.toggle("show")
+  }
+}) 
 
 // fabric
 function change() {
@@ -150,71 +157,68 @@ const searchTask = (e) => {
 input.addEventListener('input', searchTask)
 
 // Sorting cards
-const subtitle = document.querySelectorAll('.subtitle');
-const field = document.querySelector('.images');
-let div = Array.from(field.children)
-const select = document.querySelector('.sorting');
-let ar=[];
+// const subtitle = document.querySelectorAll('.subtitle');
+// const field = document.querySelector('.images');
+// let div = Array.from(field.children)
+// const select = document.querySelector('.sorting');
+// let ar=[];
 
-for (let i of div){
-  const h3 = i.children[2];
-  const x = h3.innerHTML.trim();
-  const y = Number(x.replace('zł', ''));
-  i.setAttribute('data-price', y);
-  ar.push(i);
-}
+// for (let i of div){
+//   const h3 = i.children[2];
+//   const x = h3.innerHTML.trim();
+//   const y = Number(x.replace('zł', ''));
+//   i.setAttribute('data-price', y);
+//   ar.push(i);
+// }
 
-select.onchange = sorting;
-function sorting() {
+// select.onchange = sorting;
+// function sorting() {
 
-  if(this.value === 'Sort') {
-    while(field.firstChild){
-      field.removeChild(field.firstChild);
-    }
-    field.append(...ar)
-  }
-  if(this.value === "high"){
-    sortElement(field, div, true);
-  }
-  if(this.value === "low"){
-    sortElement(field, div, false);
+//   if(this.value === 'Sort') {
+//     while(field.firstChild){
+//       field.removeChild(field.firstChild);
+//     }
+//     field.append(...ar)
+//   }
+//   if(this.value === "high"){
+//     sortElement(field, div, true);
+//   }
+//   if(this.value === "low"){
+//     sortElement(field, div, false);
  
-  }
-  if(this.value === "sortA"){
-    sortEl();
+//   }
+//   if(this.value === "sortA"){
+//     sortEl();
  
-  }
-  if(this.value === "sortZ"){
-    sortEl();
+//   }
+//   if(this.value === "sortZ"){
+//     sortEl();
  
-  }
+//   }
 
-}
+// }
 
-function sortElement(field, div, asc){
-let dm, sortDiv;
-dm = asc ? 1 : -1;
-sortDiv = div.sort((a, b) => {
-  const ax = a.getAttribute('data-price');
-  const bx = b.getAttribute('data-price');
-  return ax > bx ? (1*dm) : (-1*dm) ;
-})
-while(field.firstChild){
-  field.removeChild(field.firstChild);
-}
-field.append(...sortDiv)
-}
+// function sortElement(field, div, asc){
+// let dm, sortDiv;
+// dm = asc ? 1 : -1;
+// sortDiv = div.sort((a, b) => {
+//   const ax = a.getAttribute('data-price');
+//   const bx = b.getAttribute('data-price');
+//   return ax > bx ? (1*dm) : (-1*dm) ;
+// })
+// while(field.firstChild){
+//   field.removeChild(field.firstChild);
+// }
+// field.append(...sortDiv)
+// }
 
-  function sortEl(){
+//   function sortEl(){
    
-     sortNames = div.sort((a, b)=> { 
-      var item1 = document.querySelector(".subtitle").toUpperCase();
-      var item2 = document.querySelector(".subtitle").toUpperCase();
-      return item1-item2
+//      sortNames = div.sort((a, b)=> { 
+//       var item1 = document.querySelector(".subtitle").toUpperCase();
+//       var item2 = document.querySelector(".subtitle").toUpperCase();
+//       return item1-item2
   
-  });
-  field.append(...sortNames)
-}
-
-
-
+//   });
+//   field.append(...sortNames)
+//   }

@@ -1,28 +1,19 @@
 const layout = require('../layout');
 
 module.exports = ({ items }) => {
-  // let totalPrice = 0;
-  // for (let item of items) {
-  //   totalPrice += item.quantity * item.product.price;
-  // }
   const totalPrice = items.reduce((prev, item)=> {
     return prev + item.quantity * item.product.price;
   }, 0);
-  const totalQuantity = items.reduce((prev, item)=> {
-    return prev + item.quantity;
-  }, 0);
-
- 
-
+  // const totalQuantity = items.reduce((prev, item)=> {
+  //   return prev + item.quantity;
+  // }, 0);
   const renderedItems = items
     .map(item => {
       return `
         <div class="cart-item message">
           <h3 class="subtitle">${item.product.title}</h3>
           <div class="cart-right">
-            <div>
-              
-             <span> ${item.product.price} zł </span>
+            <div><span> ${item.product.price} zł </span>
               <span class="minus" onclick="changeNumberQuantity('minus', ${item.id})">-</span>
               <span class="number">${item.quantity}</span>
               <span class="plus" onclick="changeNumberQuantity('plus', ${item.id})">+</span>           
@@ -54,7 +45,7 @@ module.exports = ({ items }) => {
           <div class="column"></div>
           <div class="column is-four-fifths">
             <h3 class="subtitle"><b>Koszyk</b></h3>
-            <div class = "itemsCart"value="${totalQuantity}">
+            <div class = "itemsCart" value="button">
               ${renderedItems}
             </div>
             <div class="total message is-info">

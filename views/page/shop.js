@@ -9,9 +9,9 @@ module.exports = ({ products }) => {
         <a href="/shop/${product.id}"><img class="" src="data:image/png;base64, ${product.image}"/>
         <h3 class="subtitle">${product.title} <br>${product.model}</h3>
         <h5 >${product.price.toFixed(2)} zł</h5></a></form>
-        <form action="/cart/products" method="POST">
+        <form id="form" action="/cart/products" method="POST" >
           <input hidden value="${product.id}" name="productId" />
-          <button class="button has-icon is-inverted addCard">Dodaj do
+          <button class="button has-icon is-inverted addCart" >Dodaj do
           <i class="fa fa-shopping-cart"></i></button>
         </form>
        
@@ -26,7 +26,12 @@ module.exports = ({ products }) => {
       content: `
      
 <section class="shop">
-   <aside class="shopFiltres">
+
+<div class="burgers">
+<i class="burger fas fa-bars show active "></i>
+<i class="burger fas fa-times active"></i>
+</div>
+   <aside class="shopFiltres active">
         <h3>Filtry</h3>
           <div>
            <h4>Kategorie lamp</h4>
@@ -187,52 +192,67 @@ module.exports = ({ products }) => {
       <button type="button" class="btn btn-outline-secondary clear">Wyczyść filtry</button>
       </div>
    </aside>
- 
- 
-   <section class="shopBanner">
+   
+
+ <section class="shopBanner">
 <div class="field">
 <h1>Sklep firmowy</h1>
 <div class="input-group mb-3">
   <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fas fa-search"></i></button>
   <input type="text" ID = "search" class="form-control" placeholder="Wpisz nazwę produktu" aria-label="Example text with button addon" aria-describedby="button-addon1">
 </div>
-
-</div>
+  </div>
   </section>
-  <main class="allShop">
+
+   <main class="allShop">
   <div>
-  <div class="sort">
-      <select class="sorting">
+  <ul class="nav shopMenu">
+    <li class="nav-item sort">
+    <select class="sorting">
     <option value="Sort">Sortuj według:</option>
     <option value="sortA">Nazwa A-Z</option>
     <option value="sortZ">Nazwa Z-A</option>
     <option value="high">Cena rosnąco</option>
     <option value="low">Cena malejąco</option>
-  </select>
-  </div>
-  <div class="col-12 col-md-4 text-center">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center float-md-right mb-0">
-          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
-          <li class="page-item"><a class="page-link">1</a></li>
-          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
-        </ul>
-      </nav>
-    </div>
+ </select>
+    </li>
+    <li class="nav-item scroll">
+    <ul class="pagination justify-content-center">
+    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"><</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item disabled"><a class="page-link" href="#" tabindex="1">></a>
+    </li>
+    </li>
+    </ul>
+    </li>
+    <li class="nav-item basket">
+    <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop">0</span></a>
+    </li>
+   
+  </ul>
+  
+</div>
   <div>
     <div class="images">
                 
                     ${renderedProducts}  
      </div>
-     <div class="col-12 col-md-4 text-center">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center float-md-right mb-0">
-          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-left"></i></a></li>
-          <li class="page-item"><a class="page-link">1</a></li>
-          <li class="page-item"><a class="page-link"><i class="fas fa-chevron-right"></i></a></li>
-        </ul>
-      </nav>
-    </div>           
+     <nav aria-label="Page navigation example" >
+  <ul class="pagination justify-content-center scroll">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1"><</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">></a>
+    </li>
+  </ul>
+</nav>
   </main>
   
 </section>

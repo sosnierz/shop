@@ -13,7 +13,7 @@ module.exports = ({ content }) => {
         <link href="/css/contact.css" rel="stylesheet">
         <link href="/css/shop.css" rel="stylesheet">
         <link href="/css/main.css" rel="stylesheet">
-        <link href="/css/main.css" rel="stylesheet">
+        <link href="/css/id.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
@@ -42,8 +42,7 @@ module.exports = ({ content }) => {
               <li><a href=""><i class="fab fa-linkedin"></i></a></li>
               <li><a href="/"><i class="fas fa-home"></i></a></li>
               <li><a href="/shop"><i class="fas fa-store"></i></a></li>
-              <li> <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop"></span></a></li>
-            </ul>
+             </ul>
               
             </div>
           </div>
@@ -93,7 +92,7 @@ module.exports = ({ content }) => {
     </div>
    
 
- 
+
       </body>
     
     </html>

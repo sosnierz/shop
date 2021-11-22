@@ -1,29 +1,29 @@
-const itemShop = document.querySelector('.item_shop');  
-const itemsCart = document.querySelector('.itemsCart');  
+// const itemShop = document.querySelector('.item_shop');  
+// const itemsCart = document.querySelector('.itemsCart');  
 
-const changeBasket = () => {
-const totalQuantity = itemsCart.getAttribute('value');
+// const changeBasket = () => {
+// const totalQuantity = itemsCart.getAttribute('value');
 
-   itemShop.textContent = totalQuantity;
-}
+//    itemShop.textContent = totalQuantity;
+// }
 
-changeBasket();
+// changeBasket();
 
-function changeNumberQuantity(action, id) {
-   cart = cart.map((item) => {
-       let numberQuantity = item.quantity;
+// function changeNumberQuantity(action, id) {
+//    cart = cart.map((item) => {
+//        let numberQuantity = item.quantity;
  
-     if (item.id === id) {
-       if (action === "minus" && numberQuantity > 1) {
-         numberQuantity--;
-       } else if (action === "plus" && numberQuantity < item.instock) {
-         numberQuantity++;
-       }
-     }
+//      if (item.id === id) {
+//        if (action === "minus" && numberQuantity > 1) {
+//          numberQuantity--;
+//        } else if (action === "plus" && numberQuantity < item.instock) {
+//          numberQuantity++;
+//        }
+//      }
  
-     return {
-       ...item,
-       numberQuantity,
-     };
-   });
-}
+//      return {
+//        ...item,
+//        numberQuantity,
+//      };
+//    });
+// }

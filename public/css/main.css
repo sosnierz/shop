@@ -31,7 +31,6 @@ html {
   display: grid;
   position: fixed;
   width: 100%;
-  height: 40px;
   top: 0;
   left: 0;
   z-index: 1;
@@ -39,20 +38,19 @@ html {
 
 .navbar-top.navbar {
   background-color: var(--gray);
-  height: 40px;
-
+  padding: 0;
 }
 
 .navbar ul.social,
 .nav-bottom {
   display: flex;
-
+  margin-bottom: 0;
 }
 
 .navbar ul.social li {
   margin-right: 20px;
   letter-spacing: 1px;
-
+  font-size: 13px;
 }
 
 .item_shop {
@@ -78,8 +76,9 @@ ul.nav-bottom li a:hover {
   align-items: center;
 }
 
-.navbar>.container.navbar-container {
-  height: 40px;
+.navbar,
+.navbar>.container {
+  min-height: 2.3rem !important;
 }
 
 /* Banner - header */
@@ -447,7 +446,14 @@ div.col-4 p {
   .ulFooter {
     border-bottom: 1px solid var(--primary);
     padding-bottom: 10px;
+  }
 
+  .row.justify-content-around h4 {
+    font-size: 14px;
+  }
+
+  .row.justify-content-around a {
+    font-size: 11px;
   }
 
   div .row.justify-content-around {
@@ -474,16 +480,8 @@ div.col-4 p {
   }
 
   .image h2 {
-    font-size: 36px;
+
     bottom: 5%;
-  }
-
-  .row.justify-content-around h4 {
-    font-size: 20px;
-  }
-
-  .row.justify-content-around a {
-    font-size: 15px;
   }
 
   .copy p {

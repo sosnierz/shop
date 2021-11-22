@@ -1,0 +1,62 @@
+section.mb-5 {
+    display: grid;
+    grid-gap: 20px;
+    max-width: 1800px;
+    margin: 7% auto 0
+}
+
+.details img {
+    max-width: 700px;
+    max-height: 710px;
+}
+
+.nextProduct {
+    margin-top: 110px;
+    width: 100%;
+    border-bottom: 2px solid black;
+}
+
+.spanMove {
+    float: ;
+    font-size: 40px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #555;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    line-height: 19px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.spanMove:hover {
+    background: #222;
+    color: white;
+}
+
+.imagesDiv {
+    min-width: 24%;
+    height: 90%;
+    background: whitesmoke;
+    margin: 0 20px 0 0;
+    border-radius: 20px;
+    position: relative;
+    left: 0;
+    transition: 0.5s;
+
+}
+
+.imagesDiv img {
+    width: 100%;
+    height: 70%;
+    padding: 20px;
+    /*background: green;*/
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+    {
+    width: 100%;
+}
