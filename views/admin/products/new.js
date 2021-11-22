@@ -126,9 +126,9 @@ module.exports = ({ errors }) => {
 
           <div class="field">
             <label class="label">Regulacja kąta świecenia</label>  
-            <input type="checkbox" class="" name="shine" value="true">
+            <input type="checkbox" class="" name="shine" value="tak">
               <label for="shine"> Tak </label><br>
-              <input type="checkbox" class="" name="shine" value="false">
+              <input type="checkbox" class="" name="shine" value="nie">
               <label for="shine"> Nie </label><br>
           </div>
 
