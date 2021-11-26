@@ -157,11 +157,17 @@ div.container-bottom {
 }
 
 .condition>h2 {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .condition>p {
-  font-size: 15px;
+  font-size: 13px;
+}
+
+.imgCondition {
+  max-width: 60%;
+  max-height: 60%;
+  margin-bottom: 15px;
 }
 
 /* gallery */
@@ -270,8 +276,9 @@ div.col-4 p {
   }
 
   .imgCondition {
-    max-width: 70%;
-    max-height: 70%;
+    max-width: 50%;
+    max-height: 50%;
+    margin-bottom: 20px;
   }
 
   .condition>h2 {
@@ -308,6 +315,7 @@ div.col-4 p {
   .imgCondition {
     max-width: 50%;
     max-height: 50%;
+    margin-bottom: 35px;
   }
 
 }
@@ -511,11 +519,11 @@ div.col-4 p {
   }
 
   .condition>h2 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .condition>p {
-    font-size: 16px;
+    font-size: 13px;
   }
 
 

@@ -44,11 +44,13 @@ router.post('/shop/:id', async (req, res) => {
    });
 router.get('/shop/:id', async (req, res) => {
    const product = await productsRepo.getOne(req.params.id);
- 
+  
    if (!product) {
      return res.send('Product not found');
+
    }
-    res.send(pageIdTemplate({ product }));
+   res.send(pageIdTemplate({ product }));
+       
 })
 
 

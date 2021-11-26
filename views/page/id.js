@@ -33,33 +33,29 @@ module.exports =  ({product}) => {
         </table>
      
       <hr>
-      <div class="">
-                <label class="">Ilość</label>
-                 <button onclick="" class="minus"></button>
-                  <input class="quantity" min="0" name="quantity" value="1" type="number">
-                  <button onclick="" class="plus"></button>
+      <div class="quantities">
+                <label class="">Ilość: </label>
+                <input min="0" name="quantity" value="1" type="number">
+                 
         </div>
+      <div class="buttonAddCart clearfix">
       <form id="form" action="/cart/products" method="POST" >
-          <input hidden value="${product.id}" name="productId" />
-          <button class="button has-icon is-inverted addCart" >Dodaj do
-          <i class="fa fa-shopping-cart"></i></button>
-        </form> <a href="/shop"><button class="button has-icon is-inverted addCart" >Powrtót do sklepu
-        </button></a>
-    
+      <input hidden value="${product.id}" name="productId" />
+     <button class="button has-icon is-inverted" >Dodaj do <i class="fa fa-shopping-cart"></i></button> </form> 
+     <a href="/shop"><button class="button has-icon is-inverted" >Powrót do <i class="fas fa-store"></i></button></a>
+    </div>
   </div>
 </main>
 <article>
-<div>
-<div class="nextProduct">
+
 <h4>Produkty z serii</h4>
-		<p>
-				<span class="spanMove">&#139;</span>
-				<span class="spanMove">&#155;</span>
-       </p> 
-</div>
+		
+
+<aside>
 <div class="imagesDiv">
 </div>
- </div>
+</aside>
+
 </article>
 </section>
 
@@ -68,3 +64,4 @@ module.exports =  ({product}) => {
 
    `
 })}
+
