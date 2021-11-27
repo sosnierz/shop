@@ -71,6 +71,7 @@ section.contact {
     color: black;
     border: none;
     margin-top: 10px;
+    height: 40px;
 }
 
 .btn-primary.btn:hover {
