@@ -1,6 +1,7 @@
 // const itemShop = document.querySelector('.item_shop');  
 // const itemsCart = document.querySelector('.itemsCart');  
 
+
 // const changeBasket = () => {
 // const totalQuantity = itemsCart.getAttribute('value');
 
@@ -28,22 +29,23 @@
 //    });
 // }
 
+
 // delete products
-const spanQuantity = document.querySelector('.numQ');
-const btnPlus = document.querySelector('.plus');
-const btnMinus = document.querySelector('.minus');
+// const spanQuantity = document.querySelector('.numQ');
+// const btnPlus = document.querySelector('.plus');
+// const btnMinus = document.querySelector('.minus');
 
 
 
 
-function increase(){
-    if( typeof this.counter == 'undefined' ) {
-                this.counter = 1;
-            }
+// function increase(){
+//     if( typeof this.counter == 'undefined' ) {
+//                 this.counter = 1;
+//             }
     
-    spanQuantity.value = this.counter;
-    this.counter++;
-}            
+//     spanQuantity.value = this.counter;
+//     this.counter++;
+// }            
 
 // const deleteProduct = (e) =>{
 //     const quantityId = e.target.dataset.key;

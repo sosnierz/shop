@@ -45,6 +45,9 @@ module.exports = ({ content }) => {
               <li><a href=""><i class="fab fa-linkedin"></i></a></li>
               <li><a href="/"><i class="fas fa-home"></i></a></li>
               <li><a href="/shop"><i class="fas fa-store"></i></a></li>
+              <li class="nav-item basket">
+              <li> <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop"></span></a>
+                </li>
              </ul>
               
             </div>

@@ -5,19 +5,14 @@ module.exports = ({ products }) => {
   const renderedProducts = products
     .map(product => {
       return `
-  <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <form action="/shop/${product.id}" method="POST"> 
-        <a href="/shop/${product.id}"><img class="" src="data:image/png;base64, ${product.image}"/>
-        <h3 class="subtitle">${product.title} <br>${product.model}</h3>
-        <h5 >${product.price.toFixed(2)} zł</h5></a></form>
-        <form id="form" action="/cart/products" method="POST" >
-          <input hidden value="${product.id}" name="productId" />
-          <button class="button has-icon is-inverted addCart" >Dodaj do
-          <i class="fa fa-shopping-cart"></i></button>
-        </form>
-       
-     </div>
-    
-     
+      <div data-price="" class="image shopProduct ${product.category.join(' ')} ${product.fabric.join(' ')} ${product.bulb}" > <img class="" src="data:image/png;base64, ${product.image}"/>
+      <form action="/shop/${product.id}" method="POST"> 
+      <a href="/shop/${product.id}">
+      <h3 class="subtitle">${product.title} <br>${product.model}</h3>
+      <h5 >${product.price.toFixed(2)} zł</h5>
+       <input class="addCart" type="button" value="Szczegóły..."/>
+       </a></form>
+      </div>
       `
     })
     .join('\n');
@@ -228,9 +223,7 @@ module.exports = ({ products }) => {
     </li>
     </ul>
     </li>
-    <li class="nav-item basket">
-    <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop"></span></a>
-    </li>
+    
    
   </ul>
   
@@ -257,7 +250,7 @@ module.exports = ({ products }) => {
   
 </section>
 <script src="/js/shop.js"></script>
-<script src="/js/cart.js"></script>
+
               `
     });
 };

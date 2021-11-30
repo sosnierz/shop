@@ -78,7 +78,7 @@ module.exports =  () => {
         </section>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="/js/home.js"></script>
-        <script src="/js/cart.js"></script>
+ 
         
       `
     });

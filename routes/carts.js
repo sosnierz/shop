@@ -2,7 +2,7 @@ const express = require('express');
 const cartsRepo = require('../repositories/carts');
 const productsRepo = require('../repositories/products');
 const cartShowTemplate = require('../views/carts/show');
-const { requireQuantity } = require('./admin/validators');
+
 
 
 const router = express.Router();
@@ -28,19 +28,19 @@ router.post('/cart/products', async (req, res) => {
     existingItem.quantity++;
   } else {
     // add new product id to items array
-    cart.items.push({ id: req.body.productId, quantity: 1 });
+    cart.items.push({ id: req.body.productId, quantity:1 });
   }
   await cartsRepo.update(cart.id, {
     items: cart.items
   });
  
-  res.redirect('/shop');
-});
+  res.redirect('back');
+ });
 
-// Receive a GET request to show all items in cart
+// // Receive a GET request to show all items in cart
 router.get('/cart', async (req, res) => {
 if (!req.session.cartId) {
-  return res.redirect('/shop');
+   return res.redirect('back');
 }
 const cart = await cartsRepo.getOne(req.session.cartId);
 
@@ -64,7 +64,7 @@ router.post('/cart/products/delete', async (req, res) => {
   res.redirect('/cart');
 });
 
-router.post('/cart/products/quantityPlus',[requireQuantity], async (req, res) => {
+router.post('/cart/products/quantityPlus', async (req, res) => {
   
   const  itemId  = req.body.itemId;
   const cart = await cartsRepo.getOne(req.session.cartId);
@@ -78,14 +78,18 @@ router.post('/cart/products/quantityPlus',[requireQuantity], async (req, res) =>
  
   res.redirect('/cart');
 });
-router.post('/cart/products/quantityMinus',[requireQuantity], async (req, res) => {
+router.post('/cart/products/quantityMinus', async (req, res) => {
  
   const  itemId  = req.body.itemId;
   const cart = await cartsRepo.getOne(req.session.cartId);
   const changeQ = cart.items.find(item => item.id === itemId);
-  if (changeQ) {
-       changeQ.quantity--;
+  
+ 
+    if (changeQ) {
+     
+        changeQ.quantity--;
       }
+  
  
    await cartsRepo.update(cart.id, {
         items: cart.items
@@ -94,4 +98,4 @@ router.post('/cart/products/quantityMinus',[requireQuantity], async (req, res) =
   res.redirect('/cart');
 });
 
-module.exports = router;
+ module.exports = router;

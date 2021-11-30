@@ -86,10 +86,6 @@
   {
     "items": [
       {
-        "id": "11085dbb",
-        "quantity": 2
-      },
-      {
         "id": "e87a7cc4",
         "quantity": 3
       },
@@ -99,5 +95,14 @@
       }
     ],
     "id": "3cd0c01c"
+  },
+  {
+    "items": [
+      {
+        "id": "437925ac",
+        "quantity": 1
+      }
+    ],
+    "id": "93a6c143"
   }
 ]

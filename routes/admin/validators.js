@@ -32,11 +32,7 @@ module.exports = {
     .toFloat()
     .isFloat({ min: 1 })
     .withMessage('Wartość musi być większa/równa 1'),
-  requireQuantity:check('quantity')
-  .trim()
-    .toFloat()
-    .isFloat({ min: 1 })
-    .withMessage('Wartość musi być większa/równa 1'),
+  
   requireEmail: check('email')
     .trim()
     .normalizeEmail()

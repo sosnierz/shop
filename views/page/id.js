@@ -33,11 +33,7 @@ module.exports =  ({product}) => {
         </table>
      
       <hr>
-      <div class="quantities">
-                <label class="">Ilość: </label>
-                <input min="0" name="quantity" value="1" type="number">
-                 
-        </div>
+     
       <div class="buttonAddCart clearfix">
       <form id="form" action="/cart/products" method="POST" >
       <input hidden value="${product.id}" name="productId" />
