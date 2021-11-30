@@ -262,6 +262,10 @@ div.col-4 p {
   letter-spacing: 1px;
 }
 
+div.copy p {
+  margin-bottom: 0;
+}
+
 /* Media Queries */
 @media (max-width: 1800px) {
   .grid-container {

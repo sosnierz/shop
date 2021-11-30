@@ -229,7 +229,7 @@ module.exports = ({ products }) => {
     </ul>
     </li>
     <li class="nav-item basket">
-    <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop">0</span></a>
+    <a href="/cart"><i class="fa fa-shopping-cart"></i><span class="item_shop"></span></a>
     </li>
    
   </ul>

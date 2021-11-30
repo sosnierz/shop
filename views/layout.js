@@ -16,6 +16,7 @@ module.exports = ({ content }) => {
         <link href="/css/id.css" rel="stylesheet">
         <link href="/css/givebacks.css" rel="stylesheet">
         <link href="/css/statute.css" rel="stylesheet">
+        <link href="/css/carts.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         

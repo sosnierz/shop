@@ -2,6 +2,7 @@ const express = require('express');
 const cartsRepo = require('../repositories/carts');
 const productsRepo = require('../repositories/products');
 const cartShowTemplate = require('../views/carts/show');
+const { requireQuantity } = require('./admin/validators');
 
 
 const router = express.Router();
@@ -62,4 +63,35 @@ router.post('/cart/products/delete', async (req, res) => {
  
   res.redirect('/cart');
 });
+
+router.post('/cart/products/quantityPlus',[requireQuantity], async (req, res) => {
+  
+  const  itemId  = req.body.itemId;
+  const cart = await cartsRepo.getOne(req.session.cartId);
+  const changeQ = cart.items.find(item => item.id === itemId);
+  if (changeQ) {
+      changeQ.quantity++;
+      }
+   await cartsRepo.update(cart.id, {
+        items: cart.items
+      });
+ 
+  res.redirect('/cart');
+});
+router.post('/cart/products/quantityMinus',[requireQuantity], async (req, res) => {
+ 
+  const  itemId  = req.body.itemId;
+  const cart = await cartsRepo.getOne(req.session.cartId);
+  const changeQ = cart.items.find(item => item.id === itemId);
+  if (changeQ) {
+       changeQ.quantity--;
+      }
+ 
+   await cartsRepo.update(cart.id, {
+        items: cart.items
+      });
+ 
+  res.redirect('/cart');
+});
+
 module.exports = router;
